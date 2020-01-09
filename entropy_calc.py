@@ -89,7 +89,7 @@ enter_string = Label(root, text="Enter a string below")
 enter_string.pack(padx=5, pady=5)
 
 ### input box
-e = Entry(root)
+e = Entry(root,width =50)
 e.pack(padx=2, pady=2)
 
 ### calculate button
