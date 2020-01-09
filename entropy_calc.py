@@ -1,5 +1,4 @@
-import mpmath as m
-import math
+import math as m
 from tkinter import *
 from tkinter import ttk  
 from tkinter import StringVar
@@ -49,8 +48,7 @@ def calculate():
 
     for i in c_prob:
         num = float(i[1])
-        H = -(num * m.log(num, b=2))
-        #print(m.log(i[1], b=2))
+        H = -(num * m.log2(num))
         H_c.append([i[0], H])
 
     ### Print the entropy of each character
@@ -69,7 +67,7 @@ def calculate():
 
     ### Calculate and print minimum number of bits needed to encode the string
 
-    bit_size = math.ceil(H)
+    bit_size = m.ceil(H)
     min_bits = bit_size * c_num
     labelText_opt_encoding.set("Optimal encoding is possible with " + str(min_bits) + " bits")
     depositLabel_opt_encoding.pack(padx=5, pady=5)
